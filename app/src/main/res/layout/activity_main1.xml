@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/autocomplete_places"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.techgaurav.mapsprac.MainActivity1"
+    android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+    />
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.techgaurav.mapsprac.MainActivity1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tv_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="source: " />
+
+        <fragment
+            android:id="@+id/autocomplete_places_source"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_source"
+            >
+
+        </fragment>
+
+        <TextView
+            android:id="@+id/tv_dest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_source"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="8dp"
+            android:text="dest:" />
+
+        <fragment
+            android:id="@+id/autocomplete_places_destination"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/autocomplete_places_source"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@+id/tv_dest"
+            android:text="Dest: ">
+        </fragment>
+
+        <fragment
+            android:id="@+id/mymap"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/autocomplete_places_destination"
+            android:layout_marginTop="10dp"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            >
+        </fragment>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/finalmessage_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/finalmessage_dest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btn_caldist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Cal Distance" />
+
+
+</LinearLayout>
+
